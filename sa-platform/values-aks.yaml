@@ -7,7 +7,7 @@ global:
 
 # API Gateway
 api-gateway:
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-api-gateway
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
@@ -15,7 +15,7 @@ api-gateway:
 
 # Auth Service
 auth-service:
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-auth-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
@@ -23,7 +23,7 @@ auth-service:
 
 # Transaction Service
 transaction-service:
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-transaction-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
@@ -31,7 +31,7 @@ transaction-service:
 
 # Approval Service
 approval-service:
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-approval-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
@@ -39,7 +39,7 @@ approval-service:
 
 # Notification Service
 notification-service:
-  replicaCount: 2
+  replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-notification-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
