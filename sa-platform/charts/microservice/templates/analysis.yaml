@@ -14,7 +14,7 @@ spec:
             spec:
               containers:
               - name: load-test
-                image: loadimpact/k6
+                image: loadimpact/k6:0.43.1
                 command: ["k6", "run", "-"]
                 env:
                   - name: TARGET_URL
