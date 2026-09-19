@@ -11,7 +11,7 @@ api-gateway:
   image:
     repository: ghcr.io/andrescalvo98/sa-api-gateway
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
-    pullPolicy: Always
+    pullPolicy: IfNotPresent
 
 # Auth Service
 auth-service:
