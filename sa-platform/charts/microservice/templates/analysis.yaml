@@ -15,15 +15,10 @@ spec:
               containers:
               - name: load-test
                 image: loadimpact/k6:0.43.1
-                command: ["k6", "run", "-"]
-                env:
-                  - name: TARGET_URL
-                    value: "http://sa-platform-app-api-gateway"
-                stdin: true
-                stdinOnce: true
-                # The script below uses thresholds to fail the analysis if performance degrades
+                command: ["sh", "-c"]
                 args:
                   - |
+                    cat << 'EOF' | k6 run -
                     import http from 'k6/http';
                     import { check, sleep } from 'k6';
                     export let options = {
@@ -41,4 +36,8 @@ spec:
                       });
                       sleep(1);
                     }
+                    EOF
+                env:
+                  - name: TARGET_URL
+                    value: "http://sa-platform-app-api-gateway"
               restartPolicy: Never
