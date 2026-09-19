@@ -63,6 +63,8 @@ postgresql:
     existingSecret: "sa-platform-secrets"
     database: "transacciones"
   primary:
+    podLabels:
+      app: sa-platform-postgresql
     persistence:
       enabled: true
       size: 1Gi
@@ -80,6 +82,8 @@ cronjobs:
       pullPolicy: Always
 
 rabbitmq:
+  podLabels:
+    app: sa-platform-rabbitmq
   auth:
     username: "AndresCalvo"
     existingPasswordSecret: "sa-platform-secrets"
