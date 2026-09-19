@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
-  name: load-test-analysis
+  name: {{ include "microservice.fullname" . }}-load-test
 spec:
   metrics:
   - name: load-test

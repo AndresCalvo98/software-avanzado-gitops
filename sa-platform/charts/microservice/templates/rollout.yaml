@@ -21,7 +21,7 @@ spec:
       - setWeight: 80
       - analysis:
           templates:
-          - templateName: load-test-analysis
+          - templateName: {{ include "microservice.fullname" . }}-load-test
   template:
     metadata:
       labels:
