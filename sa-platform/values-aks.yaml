@@ -10,7 +10,7 @@ api-gateway:
   replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-api-gateway
-    tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+    tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
     pullPolicy: Always
 
 # Auth Service
@@ -18,7 +18,7 @@ auth-service:
   replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-auth-service
-    tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+    tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
     pullPolicy: Always
 
 # Transaction Service
@@ -26,7 +26,7 @@ transaction-service:
   replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-transaction-service
-    tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+    tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
     pullPolicy: Always
 
 # Approval Service
@@ -34,7 +34,7 @@ approval-service:
   replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-approval-service
-    tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+    tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
     pullPolicy: Always
 
 # Notification Service
@@ -42,7 +42,7 @@ notification-service:
   replicaCount: 1
   image:
     repository: ghcr.io/andrescalvo98/sa-notification-service
-    tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+    tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
     pullPolicy: Always
 
 # Configuración de los CronJobs
@@ -51,13 +51,13 @@ cronjobs:
     suspend: true
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-insert-db
-      tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+      tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
       pullPolicy: Always
   summaryBroker:
     suspend: true
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-summary-broker
-      tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
+      tag: "386a4a0986a6bd4eedb82cf7832409d0290335da"
       pullPolicy: Always
 
 # Persistencia de Postgres (Usará los discos Managed-CSI por defecto de AKS)
