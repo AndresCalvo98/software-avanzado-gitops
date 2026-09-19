@@ -63,6 +63,18 @@ postgresql:
       enabled: true
       size: 1Gi
 
+cronjobs:
+  insertDb:
+    image:
+      repository: ghcr.io/andrescalvo98/sa-cronjob-insert-db
+      tag: latest
+      pullPolicy: Always
+  summaryBroker:
+    image:
+      repository: ghcr.io/andrescalvo98/sa-cronjob-summary-broker
+      tag: latest
+      pullPolicy: Always
+
 rabbitmq:
   auth:
     username: "AndresCalvo"
