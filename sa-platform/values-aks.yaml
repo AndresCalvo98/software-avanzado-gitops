@@ -48,11 +48,13 @@ notification-service:
 # Configuración de los CronJobs
 cronjobs:
   insertDb:
+    suspend: true
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-insert-db
       tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
       pullPolicy: Always
   summaryBroker:
+    suspend: true
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-summary-broker
       tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"

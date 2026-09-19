@@ -6,6 +6,7 @@ metadata:
     app.kubernetes.io/name: cronjob-insert-db
 spec:
   schedule: "*/2 * * * *"
+  suspend: {{ .Values.cronjobs.insertDb.suspend | default false }}
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
@@ -35,6 +36,7 @@ metadata:
     app.kubernetes.io/name: cronjob-summary-broker
 spec:
   schedule: "*/10 * * * *"
+  suspend: {{ .Values.cronjobs.summaryBroker.suspend | default false }}
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 1
