@@ -58,10 +58,7 @@ notification-service:
 
 
 postgresql:
-  image:
-    registry: docker.io
-    repository: bitnami/postgresql
-    tag: "16.6.0"
+  enabled: false
   auth:
     username: ""
     existingSecret: "sa-platform-secrets"
