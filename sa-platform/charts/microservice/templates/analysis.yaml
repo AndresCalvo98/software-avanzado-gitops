@@ -18,7 +18,7 @@ spec:
                 command: ["k6", "run", "-"]
                 env:
                   - name: TARGET_URL
-                    value: "http://sa-platform-app-api-gateway"
+                    value: "http://sa-platform-app-api-gateway:8080"
                 stdin: true
                 stdinOnce: true
                 # The script below uses thresholds to fail the analysis if performance degrades
