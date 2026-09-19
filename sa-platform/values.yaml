@@ -16,6 +16,7 @@ api-gateway:
     maxReplicas: 5
 
 auth-service:
+  fullnameOverride: "sa-platform-auth-service"
   image:
     repository: mi-repo/auth-service
   service:
@@ -26,6 +27,7 @@ auth-service:
     NODE_ENV: production
 
 transaction-service:
+  fullnameOverride: "sa-platform-transaction-service"
   image:
     repository: mi-repo/transaction-service
   service:
@@ -35,6 +37,7 @@ transaction-service:
   env: {}
 
 approval-service:
+  fullnameOverride: "sa-platform-approval-service"
   image:
     repository: mi-repo/approval-service
   service:
@@ -44,6 +47,7 @@ approval-service:
   env: {}
 
 notification-service:
+  fullnameOverride: "sa-platform-notification-service"
   image:
     repository: mi-repo/notification-service
   service:
