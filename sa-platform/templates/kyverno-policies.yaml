@@ -25,7 +25,7 @@ spec:
         pattern:
           spec:
             containers:
-              - image: "!*:latest"
+              - image: "!*latest"
 ---
 # Política 2: Exigir límites de CPU y Memoria en todos los contenedores
 apiVersion: kyverno.io/v1
