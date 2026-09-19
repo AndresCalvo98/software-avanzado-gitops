@@ -74,12 +74,12 @@ cronjobs:
   insertDb:
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-insert-db
-      tag: latest
+      tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
       pullPolicy: Always
   summaryBroker:
     image:
       repository: ghcr.io/andrescalvo98/sa-cronjob-summary-broker
-      tag: latest
+      tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
       pullPolicy: Always
 
 rabbitmq:

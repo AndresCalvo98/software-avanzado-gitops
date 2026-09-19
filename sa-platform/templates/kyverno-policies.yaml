@@ -1,0 +1,117 @@
+---
+# Política 1: Prohibir el tag 'latest' en imágenes de contenedores
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: prohibir-tag-latest
+  annotations:
+    policies.kyverno.io/title: Prohibir tag latest
+    policies.kyverno.io/description: >-
+      El tag 'latest' está prohibido. Todas las imágenes deben usar un tag
+      de versión específico (ej. SHA de commit) para garantizar reproducibilidad
+      y trazabilidad del despliegue.
+spec:
+  validationFailureAction: Enforce
+  background: true
+  rules:
+    - name: require-image-tag
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Prohibido usar el tag 'latest'. Debes usar una version especifica (ej. SHA de commit)."
+        pattern:
+          spec:
+            containers:
+              - image: "!*:latest"
+---
+# Política 2: Exigir límites de CPU y Memoria en todos los contenedores
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: requerir-limites-recursos
+  annotations:
+    policies.kyverno.io/title: Requerir Límites de Recursos
+    policies.kyverno.io/description: >-
+      Todos los contenedores deben declarar requests y limits de CPU y Memoria
+      para garantizar que ningún pod consuma recursos ilimitados y afecte a otros.
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: require-resources
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Todos los contenedores deben tener CPU y Memoria (requests y limits) definidos."
+        pattern:
+          spec:
+            containers:
+              - resources:
+                  requests:
+                    cpu: "?*"
+                    memory: "?*"
+                  limits:
+                    memory: "?*"
+---
+# Política 3: Prohibir ejecución como root y exigir no-privilegio
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: requerir-no-root
+  annotations:
+    policies.kyverno.io/title: Prohibir ejecución como root
+    policies.kyverno.io/description: >-
+      Todos los contenedores deben ejecutarse sin privilegios de root.
+      Se exige runAsNonRoot=true y allowPrivilegeEscalation=false para
+      reducir la superficie de ataque en caso de vulnerabilidad.
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: require-non-root
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Los contenedores deben ejecutarse sin privilegios root (runAsNonRoot: true, allowPrivilegeEscalation: false)."
+        pattern:
+          spec:
+            containers:
+              - securityContext:
+                  runAsNonRoot: true
+                  allowPrivilegeEscalation: false
+---
+# Política 4: Requerir labels estándar en todos los pods
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: requerir-labels
+  annotations:
+    policies.kyverno.io/title: Requerir Labels Estándar
+    policies.kyverno.io/description: >-
+      Todos los pods deben tener al menos la etiqueta 'app' para facilitar
+      la observabilidad, el enrutamiento de servicios y las políticas de red.
+spec:
+  validationFailureAction: Audit
+  background: true
+  rules:
+    - name: check-for-labels
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      validate:
+        message: "Todos los pods deben tener la etiqueta 'app' definida."
+        pattern:
+          metadata:
+            labels:
+              app: "?*"
