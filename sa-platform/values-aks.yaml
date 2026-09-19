@@ -27,6 +27,7 @@ transaction-service:
   image:
     repository: ghcr.io/andrescalvo98/sa-transaction-service
     tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
+    tag: "5569393dcd5e4eebdf1e1bef78bc099c7b01fcb4"
     pullPolicy: Always
 
 # Approval Service
@@ -34,7 +35,7 @@ approval-service:
   replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-approval-service
-    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
+    tag: "5569393dcd5e4eebdf1e1bef78bc099c7b01fcb4"
     pullPolicy: Always
 
 # Notification Service
@@ -42,7 +43,7 @@ notification-service:
   replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-notification-service
-    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
+    tag: "5569393dcd5e4eebdf1e1bef78bc099c7b01fcb4"
     pullPolicy: Always
 
 # Configuración de los CronJobs
