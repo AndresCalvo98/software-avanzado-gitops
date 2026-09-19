@@ -56,7 +56,7 @@ notification-service:
 postgresql:
   auth:
     username: ""
-    password: ""
+    existingSecret: "sa-platform-secrets"
     database: "transacciones"
   primary:
     persistence:
@@ -66,4 +66,4 @@ postgresql:
 rabbitmq:
   auth:
     username: "AndresCalvo"
-    password: "password"
+    existingPasswordSecret: "sa-platform-secrets"

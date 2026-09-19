@@ -3,59 +3,59 @@
 
 # Configuración Global
 global:
-  registry: acrsap6andres.azurecr.io
+  registry: ghcr.io
 
 # API Gateway
 api-gateway:
   replicaCount: 2
   image:
-    repository: acrsap6andres.azurecr.io/api-gateway
-    tag: latest
+    repository: ghcr.io/andrescalvo98/sa-api-gateway
+    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
     pullPolicy: Always
 
 # Auth Service
 auth-service:
   replicaCount: 2
   image:
-    repository: acrsap6andres.azurecr.io/auth-service
-    tag: latest
+    repository: ghcr.io/andrescalvo98/sa-auth-service
+    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
     pullPolicy: Always
 
 # Transaction Service
 transaction-service:
   replicaCount: 2
   image:
-    repository: acrsap6andres.azurecr.io/transaction-service
-    tag: latest
+    repository: ghcr.io/andrescalvo98/sa-transaction-service
+    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
     pullPolicy: Always
 
 # Approval Service
 approval-service:
   replicaCount: 2
   image:
-    repository: acrsap6andres.azurecr.io/approval-service
-    tag: latest
+    repository: ghcr.io/andrescalvo98/sa-approval-service
+    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
     pullPolicy: Always
 
 # Notification Service
 notification-service:
   replicaCount: 2
   image:
-    repository: acrsap6andres.azurecr.io/notification-service
-    tag: latest
+    repository: ghcr.io/andrescalvo98/sa-notification-service
+    tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
     pullPolicy: Always
 
 # Configuración de los CronJobs
 cronjobs:
   insertDb:
     image:
-      repository: acrsap6andres.azurecr.io/cronjob-insert-db
-      tag: latest
+      repository: ghcr.io/andrescalvo98/sa-cronjob-insert-db
+      tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
       pullPolicy: Always
   summaryBroker:
     image:
-      repository: acrsap6andres.azurecr.io/cronjob-summary-broker
-      tag: latest
+      repository: ghcr.io/andrescalvo98/sa-cronjob-summary-broker
+      tag: "d66125fe88f7cedfaa8ad25fe2a2ffe9b598dafa"
       pullPolicy: Always
 
 # Persistencia de Postgres (Usará los discos Managed-CSI por defecto de AKS)
@@ -69,5 +69,5 @@ postgresql:
 
 rabbitmq:
   auth:
-    username: "AndresCalvo"
-    password: "password"
+    username: "user"
+    existingPasswordSecret: "sa-platform-secrets"
