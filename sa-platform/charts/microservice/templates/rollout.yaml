@@ -28,10 +28,6 @@ spec:
         {{- include "microservice.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "microservice.fullname" . }}
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 1000
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
