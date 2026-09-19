@@ -61,7 +61,7 @@ cronjobs:
 # Persistencia de Postgres (Usará los discos Managed-CSI por defecto de AKS)
 postgresql:
   image:
-    tag: latest
+    tag: "15.4.0"
   primary:
     persistence:
       size: 1Gi
