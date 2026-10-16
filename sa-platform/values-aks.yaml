@@ -1,45 +1,43 @@
 # values-aks.yaml
-# Entorno de Producción en AKS (Azure)
-
-# Configuración Global
+# Entorno de Producción en AKS (Azure) - Alta Disponibilidad y Resiliencia
 global:
   registry: ghcr.io
 
-# API Gateway
+# API Gateway (2 réplicas distribuidas)
 api-gateway:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-api-gateway
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
     pullPolicy: Always
 
-# Auth Service
+# Auth Service (2 réplicas distribuidas)
 auth-service:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-auth-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
     pullPolicy: Always
 
-# Transaction Service
+# Transaction Service (2 réplicas distribuidas)
 transaction-service:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-transaction-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
     pullPolicy: Always
 
-# Approval Service
+# Approval Service (2 réplicas distribuidas)
 approval-service:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-approval-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
     pullPolicy: Always
 
-# Notification Service
+# Notification Service (2 réplicas distribuidas)
 notification-service:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: ghcr.io/andrescalvo98/sa-notification-service
     tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
@@ -60,14 +58,21 @@ cronjobs:
       tag: "a77ad6744bad4fceee6971b7963b9c2696f29092"
       pullPolicy: Always
 
-# Persistencia de Postgres (Usará los discos Managed-CSI por defecto de AKS)
+# Persistencia de PostgreSQL (Usará Managed-CSI de Azure)
 postgresql:
+  enabled: true
+  auth:
+    username: "postgres"
+    password: "secretpassword"
+    database: "transacciones"
+    existingSecret: ""
   primary:
     persistence:
+      enabled: true
       size: 1Gi
-      # No especificamos storageClass para que Azure asigne su default
 
 rabbitmq:
   auth:
     username: "user"
+    password: "password"
     existingPasswordSecret: "sa-platform-secrets"

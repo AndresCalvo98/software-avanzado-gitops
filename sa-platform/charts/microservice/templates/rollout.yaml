@@ -28,6 +28,18 @@ spec:
         {{- include "microservice.selectorLabels" . | nindent 8 }}
     spec:
       serviceAccountName: {{ include "microservice.fullname" . }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app.kubernetes.io/name
+                  operator: In
+                  values:
+                  - {{ include "microservice.name" . }}
+              topologyKey: kubernetes.io/hostname
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
