@@ -61,6 +61,8 @@ cronjobs:
 # Persistencia de PostgreSQL (Usará Managed-CSI de Azure)
 postgresql:
   enabled: true
+  image:
+    tag: "16.1.0"
   auth:
     username: "postgres"
     password: "secretpassword"
