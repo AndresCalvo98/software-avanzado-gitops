@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sa-platform-info
+  namespace: produccion
+data:
+  carnet: "201712620"
+  platform: "sa-platform-production"
+  tier: "production"
+  environment: "aks-eastus"
