@@ -1,0 +1,1316 @@
+{
+    "apiVersion": "argoproj.io/v1alpha1",
+    "kind": "Application",
+    "metadata": {
+        "annotations": {
+            "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"argoproj.io/v1alpha1\",\"kind\":\"Application\",\"metadata\":{\"annotations\":{},\"creationTimestamp\":\"2026-09-19T06:19:48Z\",\"generation\":805,\"name\":\"sa-platform-app\",\"namespace\":\"argocd\",\"resourceVersion\":\"169041\",\"uid\":\"93c7d733-ae32-4ea2-b253-62fdb6038eda\"},\"spec\":{\"destination\":{\"namespace\":\"produccion\",\"server\":\"https://kubernetes.default.svc\"},\"ignoreDifferences\":[{\"group\":\"apps\",\"jsonPointers\":[\"/spec/volumeClaimTemplates\"],\"kind\":\"StatefulSet\"}],\"project\":\"default\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"},\"syncPolicy\":{\"automated\":{\"prune\":true,\"selfHeal\":true},\"syncOptions\":[\"RespectIgnoreDifferences=true\"]}},\"status\":{\"controllerNamespace\":\"argocd\",\"health\":{\"lastTransitionTime\":\"2026-09-19T08:36:14Z\",\"status\":\"Degraded\"},\"history\":[{\"deployStartedAt\":\"2026-09-19T07:12:47Z\",\"deployedAt\":\"2026-09-19T07:12:50Z\",\"id\":0,\"initiatedBy\":{\"automated\":true},\"revision\":\"fa2323635d22a55539c86ab2945ec183de7e25de\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:03:26Z\",\"deployedAt\":\"2026-09-19T08:03:30Z\",\"id\":1,\"initiatedBy\":{\"username\":\"admin\"},\"revision\":\"4c3943443020e686b43205859e8dcec249335dab\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:11:54Z\",\"deployedAt\":\"2026-09-19T08:11:58Z\",\"id\":2,\"initiatedBy\":{\"automated\":true},\"revision\":\"e1e39b8246e69a0dd0dbfb38e153bfd5464e01c7\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:12:08Z\",\"deployedAt\":\"2026-09-19T08:12:12Z\",\"id\":3,\"initiatedBy\":{\"username\":\"admin\"},\"revision\":\"e1e39b8246e69a0dd0dbfb38e153bfd5464e01c7\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:17:46Z\",\"deployedAt\":\"2026-09-19T08:17:49Z\",\"id\":4,\"initiatedBy\":{\"automated\":true},\"revision\":\"d89c424ebefcdca8468ec23f1f2490240f45fa07\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:18:01Z\",\"deployedAt\":\"2026-09-19T08:18:03Z\",\"id\":5,\"initiatedBy\":{\"username\":\"admin\"},\"revision\":\"d89c424ebefcdca8468ec23f1f2490240f45fa07\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:23:51Z\",\"deployedAt\":\"2026-09-19T08:23:56Z\",\"id\":6,\"initiatedBy\":{\"automated\":true},\"revision\":\"fe9a9d77c9f2b190913611ebb095faf005958645\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},{\"deployStartedAt\":\"2026-09-19T08:24:05Z\",\"deployedAt\":\"2026-09-19T08:24:08Z\",\"id\":7,\"initiatedBy\":{\"username\":\"admin\"},\"revision\":\"fe9a9d77c9f2b190913611ebb095faf005958645\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}}],\"operationState\":{\"finishedAt\":\"2026-09-19T08:33:39Z\",\"message\":\"successfully synced (all tasks run)\",\"operation\":{\"initiatedBy\":{\"automated\":true},\"retry\":{\"limit\":5},\"sync\":{\"autoHealAttemptsCount\":6,\"prune\":true,\"resources\":[{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-transaction-service\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-app-api-gateway\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-auth-service\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-notification-service\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-approval-service\"}],\"revision\":\"fe9a9d77c9f2b190913611ebb095faf005958645\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"},\"syncOptions\":[\"RespectIgnoreDifferences=true\"]}},\"phase\":\"Succeeded\",\"startedAt\":\"2026-09-19T08:33:39Z\",\"syncResult\":{\"resources\":[{\"group\":\"apps\",\"hookPhase\":\"Running\",\"images\":[\"ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092\"],\"kind\":\"Deployment\",\"message\":\"deployment.apps/sa-platform-auth-service configured\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"syncPhase\":\"Sync\",\"version\":\"v1\"},{\"group\":\"apps\",\"hookPhase\":\"Running\",\"images\":[\"ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092\"],\"kind\":\"Deployment\",\"message\":\"deployment.apps/sa-platform-app-api-gateway configured\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"syncPhase\":\"Sync\",\"version\":\"v1\"},{\"group\":\"apps\",\"hookPhase\":\"Running\",\"images\":[\"ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092\"],\"kind\":\"Deployment\",\"message\":\"deployment.apps/sa-platform-approval-service configured\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"syncPhase\":\"Sync\",\"version\":\"v1\"},{\"group\":\"apps\",\"hookPhase\":\"Running\",\"images\":[\"ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092\"],\"kind\":\"Deployment\",\"message\":\"deployment.apps/sa-platform-notification-service configured\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"syncPhase\":\"Sync\",\"version\":\"v1\"},{\"group\":\"apps\",\"hookPhase\":\"Running\",\"images\":[\"ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092\"],\"kind\":\"Deployment\",\"message\":\"deployment.apps/sa-platform-transaction-service configured\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"syncPhase\":\"Sync\",\"version\":\"v1\"}],\"revision\":\"fe9a9d77c9f2b190913611ebb095faf005958645\",\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}}},\"reconciledAt\":\"2026-09-19T08:36:14Z\",\"resourceHealthSource\":\"appTree\",\"resources\":[{\"kind\":\"ConfigMap\",\"name\":\"sa-platform-app-api-gateway-config\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ConfigMap\",\"name\":\"sa-platform-approval-service-config\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ConfigMap\",\"name\":\"sa-platform-auth-service-config\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ConfigMap\",\"name\":\"sa-platform-notification-service-config\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ConfigMap\",\"name\":\"sa-platform-transaction-service-config\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"LimitRange\",\"name\":\"sa-platform-limits\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ResourceQuota\",\"name\":\"sa-platform-quota\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Secret\",\"name\":\"sa-platform-secrets\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-rabbitmq\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-rabbitmq-headless\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"Service\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-cronjobs\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"kind\":\"ServiceAccount\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"OutOfSync\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"OutOfSync\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"OutOfSync\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"OutOfSync\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"Deployment\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"OutOfSync\",\"version\":\"v1\"},{\"group\":\"apps\",\"kind\":\"StatefulSet\",\"name\":\"sa-platform-rabbitmq\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"autoscaling\",\"kind\":\"HorizontalPodAutoscaler\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v2\"},{\"group\":\"autoscaling\",\"kind\":\"HorizontalPodAutoscaler\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v2\"},{\"group\":\"autoscaling\",\"kind\":\"HorizontalPodAutoscaler\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v2\"},{\"group\":\"autoscaling\",\"kind\":\"HorizontalPodAutoscaler\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v2\"},{\"group\":\"autoscaling\",\"kind\":\"HorizontalPodAutoscaler\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v2\"},{\"group\":\"batch\",\"kind\":\"CronJob\",\"name\":\"cronjob-insert-db\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"batch\",\"kind\":\"CronJob\",\"name\":\"cronjob-summary-broker\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"bitnami.com\",\"kind\":\"SealedSecret\",\"name\":\"sa-platform-secrets\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1alpha1\"},{\"group\":\"networking.k8s.io\",\"kind\":\"Ingress\",\"name\":\"sa-platform-ingress\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"networking.k8s.io\",\"kind\":\"NetworkPolicy\",\"name\":\"allow-gateway-to-microservices\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"networking.k8s.io\",\"kind\":\"NetworkPolicy\",\"name\":\"allow-ingress-to-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"networking.k8s.io\",\"kind\":\"NetworkPolicy\",\"name\":\"allow-microservices-to-postgresql\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"networking.k8s.io\",\"kind\":\"NetworkPolicy\",\"name\":\"allow-microservices-to-rabbitmq\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"policy\",\"kind\":\"PodDisruptionBudget\",\"name\":\"sa-platform-app-api-gateway\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"policy\",\"kind\":\"PodDisruptionBudget\",\"name\":\"sa-platform-approval-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"policy\",\"kind\":\"PodDisruptionBudget\",\"name\":\"sa-platform-auth-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"policy\",\"kind\":\"PodDisruptionBudget\",\"name\":\"sa-platform-notification-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"policy\",\"kind\":\"PodDisruptionBudget\",\"name\":\"sa-platform-transaction-service\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"rbac.authorization.k8s.io\",\"kind\":\"Role\",\"name\":\"cronjob-role\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"},{\"group\":\"rbac.authorization.k8s.io\",\"kind\":\"RoleBinding\",\"name\":\"cronjob-rolebinding\",\"namespace\":\"produccion\",\"status\":\"Synced\",\"version\":\"v1\"}],\"sourceHydrator\":{},\"sourceType\":\"Helm\",\"summary\":{\"images\":[\"ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092\",\"ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092\",\"ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092\",\"ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092\",\"ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092\",\"rabbitmq:3.13-management\"]},\"sync\":{\"comparedTo\":{\"destination\":{\"namespace\":\"produccion\",\"server\":\"https://kubernetes.default.svc\"},\"ignoreDifferences\":[{\"group\":\"apps\",\"jsonPointers\":[\"/spec/volumeClaimTemplates\"],\"kind\":\"StatefulSet\"}],\"source\":{\"helm\":{\"valueFiles\":[\"values-aks.yaml\"]},\"path\":\"sa-platform\",\"repoURL\":\"https://github.com/AndresCalvo98/software-avanzado-gitops.git\",\"targetRevision\":\"HEAD\"}},\"revision\":\"fe9a9d77c9f2b190913611ebb095faf005958645\",\"status\":\"OutOfSync\"}}}\n"
+        },
+        "creationTimestamp": "2026-09-19T08:36:45Z",
+        "generation": 172,
+        "name": "sa-platform-app",
+        "namespace": "argocd",
+        "resourceVersion": "308996",
+        "uid": "82a7ae75-9c0f-44ec-94bb-3ec308ea43d9"
+    },
+    "spec": {
+        "destination": {
+            "namespace": "produccion",
+            "server": "https://kubernetes.default.svc"
+        },
+        "ignoreDifferences": [
+            {
+                "group": "apps",
+                "jsonPointers": [
+                    "/spec/volumeClaimTemplates"
+                ],
+                "kind": "StatefulSet"
+            }
+        ],
+        "project": "default",
+        "source": {
+            "helm": {
+                "valueFiles": [
+                    "values-aks.yaml"
+                ]
+            },
+            "path": "sa-platform",
+            "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+            "targetRevision": "af1a53234b78861fb937810798a67d32508b0e1c"
+        },
+        "syncPolicy": {
+            "automated": {
+                "prune": true,
+                "selfHeal": true
+            },
+            "syncOptions": [
+                "RespectIgnoreDifferences=true"
+            ]
+        }
+    },
+    "status": {
+        "controllerNamespace": "argocd",
+        "health": {
+            "lastTransitionTime": "2026-09-19T09:00:28Z",
+            "status": "Degraded"
+        },
+        "history": [
+            {
+                "deployStartedAt": "2026-09-19T08:12:08Z",
+                "deployedAt": "2026-09-19T08:12:12Z",
+                "id": 3,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "e1e39b8246e69a0dd0dbfb38e153bfd5464e01c7",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:17:46Z",
+                "deployedAt": "2026-09-19T08:17:49Z",
+                "id": 4,
+                "initiatedBy": {
+                    "automated": true
+                },
+                "revision": "d89c424ebefcdca8468ec23f1f2490240f45fa07",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:18:01Z",
+                "deployedAt": "2026-09-19T08:18:03Z",
+                "id": 5,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "d89c424ebefcdca8468ec23f1f2490240f45fa07",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:23:51Z",
+                "deployedAt": "2026-09-19T08:23:56Z",
+                "id": 6,
+                "initiatedBy": {
+                    "automated": true
+                },
+                "revision": "fe9a9d77c9f2b190913611ebb095faf005958645",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:24:05Z",
+                "deployedAt": "2026-09-19T08:24:08Z",
+                "id": 7,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "fe9a9d77c9f2b190913611ebb095faf005958645",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:41:34Z",
+                "deployedAt": "2026-09-19T08:41:39Z",
+                "id": 8,
+                "initiatedBy": {
+                    "automated": true
+                },
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:41:49Z",
+                "deployedAt": "2026-09-19T08:41:53Z",
+                "id": 9,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T08:43:47Z",
+                "deployedAt": "2026-09-19T08:43:50Z",
+                "id": 10,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T13:27:47Z",
+                "deployedAt": "2026-09-19T13:27:51Z",
+                "id": 11,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "HEAD"
+                }
+            },
+            {
+                "deployStartedAt": "2026-09-19T13:30:07Z",
+                "deployedAt": "2026-09-19T13:30:10Z",
+                "id": 12,
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "af1a53234b78861fb937810798a67d32508b0e1c"
+                }
+            }
+        ],
+        "operationState": {
+            "finishedAt": "2026-09-19T13:30:10Z",
+            "message": "successfully synced (all tasks run)",
+            "operation": {
+                "initiatedBy": {
+                    "username": "admin"
+                },
+                "retry": {},
+                "sync": {
+                    "prune": true,
+                    "revision": "af1a53234b78861fb937810798a67d32508b0e1c"
+                }
+            },
+            "phase": "Succeeded",
+            "startedAt": "2026-09-19T13:30:07Z",
+            "syncResult": {
+                "resources": [
+                    {
+                        "group": "networking.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "NetworkPolicy",
+                        "message": "networkpolicy.networking.k8s.io/allow-microservices-to-rabbitmq unchanged",
+                        "name": "allow-microservices-to-rabbitmq",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "networking.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "NetworkPolicy",
+                        "message": "networkpolicy.networking.k8s.io/allow-microservices-to-postgresql unchanged",
+                        "name": "allow-microservices-to-postgresql",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "networking.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "NetworkPolicy",
+                        "message": "networkpolicy.networking.k8s.io/allow-ingress-to-gateway unchanged",
+                        "name": "allow-ingress-to-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "networking.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "NetworkPolicy",
+                        "message": "networkpolicy.networking.k8s.io/allow-gateway-to-microservices unchanged",
+                        "name": "allow-gateway-to-microservices",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ResourceQuota",
+                        "message": "resourcequota/sa-platform-quota unchanged",
+                        "name": "sa-platform-quota",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "LimitRange",
+                        "message": "limitrange/sa-platform-limits unchanged",
+                        "name": "sa-platform-limits",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "policy",
+                        "hookPhase": "Running",
+                        "kind": "PodDisruptionBudget",
+                        "message": "poddisruptionbudget.policy/sa-platform-auth-service configured",
+                        "name": "sa-platform-auth-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "policy",
+                        "hookPhase": "Running",
+                        "kind": "PodDisruptionBudget",
+                        "message": "poddisruptionbudget.policy/sa-platform-transaction-service configured",
+                        "name": "sa-platform-transaction-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "policy",
+                        "hookPhase": "Running",
+                        "kind": "PodDisruptionBudget",
+                        "message": "poddisruptionbudget.policy/sa-platform-approval-service configured",
+                        "name": "sa-platform-approval-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "policy",
+                        "hookPhase": "Running",
+                        "kind": "PodDisruptionBudget",
+                        "message": "poddisruptionbudget.policy/sa-platform-app-api-gateway configured",
+                        "name": "sa-platform-app-api-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "policy",
+                        "hookPhase": "Running",
+                        "kind": "PodDisruptionBudget",
+                        "message": "poddisruptionbudget.policy/sa-platform-notification-service configured",
+                        "name": "sa-platform-notification-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-cronjobs unchanged",
+                        "name": "sa-platform-cronjobs",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-notification-service unchanged",
+                        "name": "sa-platform-notification-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-app-api-gateway unchanged",
+                        "name": "sa-platform-app-api-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-transaction-service unchanged",
+                        "name": "sa-platform-transaction-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-approval-service unchanged",
+                        "name": "sa-platform-approval-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ServiceAccount",
+                        "message": "serviceaccount/sa-platform-auth-service unchanged",
+                        "name": "sa-platform-auth-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Secret",
+                        "message": "secret/sa-platform-secrets unchanged",
+                        "name": "sa-platform-secrets",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ConfigMap",
+                        "message": "configmap/sa-platform-app-api-gateway-config configured",
+                        "name": "sa-platform-app-api-gateway-config",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ConfigMap",
+                        "message": "configmap/sa-platform-auth-service-config unchanged",
+                        "name": "sa-platform-auth-service-config",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ConfigMap",
+                        "message": "configmap/sa-platform-approval-service-config configured",
+                        "name": "sa-platform-approval-service-config",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ConfigMap",
+                        "message": "configmap/sa-platform-notification-service-config configured",
+                        "name": "sa-platform-notification-service-config",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "ConfigMap",
+                        "message": "configmap/sa-platform-transaction-service-config configured",
+                        "name": "sa-platform-transaction-service-config",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "rbac.authorization.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "Role",
+                        "message": "role.rbac.authorization.k8s.io/cronjob-role reconciledrole.rbac.authorization.k8s.io/cronjob-role unchanged",
+                        "name": "cronjob-role",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "rbac.authorization.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "RoleBinding",
+                        "message": "rolebinding.rbac.authorization.k8s.io/cronjob-rolebinding reconciledrolebinding.rbac.authorization.k8s.io/cronjob-rolebinding unchanged",
+                        "name": "cronjob-rolebinding",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-notification-service unchanged",
+                        "name": "sa-platform-notification-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-app-api-gateway unchanged",
+                        "name": "sa-platform-app-api-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-approval-service unchanged",
+                        "name": "sa-platform-approval-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-auth-service unchanged",
+                        "name": "sa-platform-auth-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-rabbitmq unchanged",
+                        "name": "sa-platform-rabbitmq",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-rabbitmq-headless unchanged",
+                        "name": "sa-platform-rabbitmq-headless",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "",
+                        "hookPhase": "Running",
+                        "kind": "Service",
+                        "message": "service/sa-platform-transaction-service unchanged",
+                        "name": "sa-platform-transaction-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "autoscaling",
+                        "hookPhase": "Running",
+                        "kind": "HorizontalPodAutoscaler",
+                        "message": "horizontalpodautoscaler.autoscaling/sa-platform-notification-service unchanged",
+                        "name": "sa-platform-notification-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v2"
+                    },
+                    {
+                        "group": "autoscaling",
+                        "hookPhase": "Running",
+                        "kind": "HorizontalPodAutoscaler",
+                        "message": "horizontalpodautoscaler.autoscaling/sa-platform-app-api-gateway unchanged",
+                        "name": "sa-platform-app-api-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v2"
+                    },
+                    {
+                        "group": "autoscaling",
+                        "hookPhase": "Running",
+                        "kind": "HorizontalPodAutoscaler",
+                        "message": "horizontalpodautoscaler.autoscaling/sa-platform-approval-service unchanged",
+                        "name": "sa-platform-approval-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v2"
+                    },
+                    {
+                        "group": "autoscaling",
+                        "hookPhase": "Running",
+                        "kind": "HorizontalPodAutoscaler",
+                        "message": "horizontalpodautoscaler.autoscaling/sa-platform-auth-service unchanged",
+                        "name": "sa-platform-auth-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v2"
+                    },
+                    {
+                        "group": "autoscaling",
+                        "hookPhase": "Running",
+                        "kind": "HorizontalPodAutoscaler",
+                        "message": "horizontalpodautoscaler.autoscaling/sa-platform-transaction-service unchanged",
+                        "name": "sa-platform-transaction-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v2"
+                    },
+                    {
+                        "group": "apps",
+                        "hookPhase": "Running",
+                        "images": [
+                            "rabbitmq:3.13-management"
+                        ],
+                        "kind": "StatefulSet",
+                        "message": "statefulset.apps/sa-platform-rabbitmq unchanged",
+                        "name": "sa-platform-rabbitmq",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-cronjob-summary-broker:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "CronJob",
+                        "message": "cronjob.batch/cronjob-summary-broker unchanged",
+                        "name": "cronjob-summary-broker",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "batch",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-cronjob-insert-db:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "CronJob",
+                        "message": "cronjob.batch/cronjob-insert-db unchanged",
+                        "name": "cronjob-insert-db",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "networking.k8s.io",
+                        "hookPhase": "Running",
+                        "kind": "Ingress",
+                        "message": "ingress.networking.k8s.io/sa-platform-ingress unchanged",
+                        "name": "sa-platform-ingress",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "Rollout",
+                        "message": "rollout.argoproj.io/sa-platform-app-api-gateway unchanged",
+                        "name": "sa-platform-app-api-gateway",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "kind": "AnalysisTemplate",
+                        "message": "analysistemplate.argoproj.io/sa-platform-app-api-gateway-load-test unchanged",
+                        "name": "sa-platform-app-api-gateway-load-test",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "Rollout",
+                        "message": "rollout.argoproj.io/sa-platform-approval-service unchanged",
+                        "name": "sa-platform-approval-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "kind": "AnalysisTemplate",
+                        "message": "analysistemplate.argoproj.io/sa-platform-approval-service-load-test unchanged",
+                        "name": "sa-platform-approval-service-load-test",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "Rollout",
+                        "message": "rollout.argoproj.io/sa-platform-auth-service unchanged",
+                        "name": "sa-platform-auth-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "kind": "AnalysisTemplate",
+                        "message": "analysistemplate.argoproj.io/sa-platform-auth-service-load-test unchanged",
+                        "name": "sa-platform-auth-service-load-test",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "Rollout",
+                        "message": "rollout.argoproj.io/sa-platform-notification-service unchanged",
+                        "name": "sa-platform-notification-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "kind": "AnalysisTemplate",
+                        "message": "analysistemplate.argoproj.io/sa-platform-notification-service-load-test unchanged",
+                        "name": "sa-platform-notification-service-load-test",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "bitnami.com",
+                        "hookPhase": "Running",
+                        "kind": "SealedSecret",
+                        "message": "sealedsecret.bitnami.com/sa-platform-secrets unchanged",
+                        "name": "sa-platform-secrets",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "images": [
+                            "ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092"
+                        ],
+                        "kind": "Rollout",
+                        "message": "rollout.argoproj.io/sa-platform-transaction-service unchanged",
+                        "name": "sa-platform-transaction-service",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    },
+                    {
+                        "group": "argoproj.io",
+                        "hookPhase": "Running",
+                        "kind": "AnalysisTemplate",
+                        "message": "analysistemplate.argoproj.io/sa-platform-transaction-service-load-test unchanged",
+                        "name": "sa-platform-transaction-service-load-test",
+                        "namespace": "produccion",
+                        "status": "Synced",
+                        "syncPhase": "Sync",
+                        "version": "v1alpha1"
+                    }
+                ],
+                "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "af1a53234b78861fb937810798a67d32508b0e1c"
+                }
+            }
+        },
+        "reconciledAt": "2026-09-19T13:33:14Z",
+        "resourceHealthSource": "appTree",
+        "resources": [
+            {
+                "kind": "ConfigMap",
+                "name": "sa-platform-app-api-gateway-config",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ConfigMap",
+                "name": "sa-platform-approval-service-config",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ConfigMap",
+                "name": "sa-platform-auth-service-config",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ConfigMap",
+                "name": "sa-platform-notification-service-config",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ConfigMap",
+                "name": "sa-platform-transaction-service-config",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "LimitRange",
+                "name": "sa-platform-limits",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ResourceQuota",
+                "name": "sa-platform-quota",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Secret",
+                "name": "sa-platform-secrets",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-app-api-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-approval-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-auth-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-notification-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-rabbitmq",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-rabbitmq-headless",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "Service",
+                "name": "sa-platform-transaction-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-app-api-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-approval-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-auth-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-cronjobs",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-notification-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "kind": "ServiceAccount",
+                "name": "sa-platform-transaction-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "apps",
+                "kind": "StatefulSet",
+                "name": "sa-platform-rabbitmq",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "AnalysisTemplate",
+                "name": "sa-platform-app-api-gateway-load-test",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "AnalysisTemplate",
+                "name": "sa-platform-approval-service-load-test",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "AnalysisTemplate",
+                "name": "sa-platform-auth-service-load-test",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "AnalysisTemplate",
+                "name": "sa-platform-notification-service-load-test",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "AnalysisTemplate",
+                "name": "sa-platform-transaction-service-load-test",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "Rollout",
+                "name": "sa-platform-app-api-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "Rollout",
+                "name": "sa-platform-approval-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "Rollout",
+                "name": "sa-platform-auth-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "Rollout",
+                "name": "sa-platform-notification-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "argoproj.io",
+                "kind": "Rollout",
+                "name": "sa-platform-transaction-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "autoscaling",
+                "kind": "HorizontalPodAutoscaler",
+                "name": "sa-platform-app-api-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v2"
+            },
+            {
+                "group": "autoscaling",
+                "kind": "HorizontalPodAutoscaler",
+                "name": "sa-platform-approval-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v2"
+            },
+            {
+                "group": "autoscaling",
+                "kind": "HorizontalPodAutoscaler",
+                "name": "sa-platform-auth-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v2"
+            },
+            {
+                "group": "autoscaling",
+                "kind": "HorizontalPodAutoscaler",
+                "name": "sa-platform-notification-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v2"
+            },
+            {
+                "group": "autoscaling",
+                "kind": "HorizontalPodAutoscaler",
+                "name": "sa-platform-transaction-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v2"
+            },
+            {
+                "group": "batch",
+                "kind": "CronJob",
+                "name": "cronjob-insert-db",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "batch",
+                "kind": "CronJob",
+                "name": "cronjob-summary-broker",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "bitnami.com",
+                "kind": "SealedSecret",
+                "name": "sa-platform-secrets",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1alpha1"
+            },
+            {
+                "group": "networking.k8s.io",
+                "kind": "Ingress",
+                "name": "sa-platform-ingress",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "networking.k8s.io",
+                "kind": "NetworkPolicy",
+                "name": "allow-gateway-to-microservices",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "networking.k8s.io",
+                "kind": "NetworkPolicy",
+                "name": "allow-ingress-to-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "networking.k8s.io",
+                "kind": "NetworkPolicy",
+                "name": "allow-microservices-to-postgresql",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "networking.k8s.io",
+                "kind": "NetworkPolicy",
+                "name": "allow-microservices-to-rabbitmq",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "policy",
+                "kind": "PodDisruptionBudget",
+                "name": "sa-platform-app-api-gateway",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "policy",
+                "kind": "PodDisruptionBudget",
+                "name": "sa-platform-approval-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "policy",
+                "kind": "PodDisruptionBudget",
+                "name": "sa-platform-auth-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "policy",
+                "kind": "PodDisruptionBudget",
+                "name": "sa-platform-notification-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "policy",
+                "kind": "PodDisruptionBudget",
+                "name": "sa-platform-transaction-service",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "rbac.authorization.k8s.io",
+                "kind": "Role",
+                "name": "cronjob-role",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            },
+            {
+                "group": "rbac.authorization.k8s.io",
+                "kind": "RoleBinding",
+                "name": "cronjob-rolebinding",
+                "namespace": "produccion",
+                "status": "Synced",
+                "version": "v1"
+            }
+        ],
+        "sourceHydrator": {},
+        "sourceType": "Helm",
+        "summary": {
+            "images": [
+                "ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092",
+                "ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092",
+                "ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092",
+                "ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092",
+                "ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092",
+                "rabbitmq:3.13-management"
+            ]
+        },
+        "sync": {
+            "comparedTo": {
+                "destination": {
+                    "namespace": "produccion",
+                    "server": "https://kubernetes.default.svc"
+                },
+                "ignoreDifferences": [
+                    {
+                        "group": "apps",
+                        "jsonPointers": [
+                            "/spec/volumeClaimTemplates"
+                        ],
+                        "kind": "StatefulSet"
+                    }
+                ],
+                "source": {
+                    "helm": {
+                        "valueFiles": [
+                            "values-aks.yaml"
+                        ]
+                    },
+                    "path": "sa-platform",
+                    "repoURL": "https://github.com/AndresCalvo98/software-avanzado-gitops.git",
+                    "targetRevision": "af1a53234b78861fb937810798a67d32508b0e1c"
+                }
+            },
+            "revision": "af1a53234b78861fb937810798a67d32508b0e1c",
+            "status": "Synced"
+        }
+    }
+}

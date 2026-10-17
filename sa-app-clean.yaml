@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sa-platform-app
+  namespace: argocd
+spec:
+  destination:
+    namespace: produccion
+    server: https://kubernetes.default.svc
+  ignoreDifferences:
+  - group: apps
+    jsonPointers:
+    - /spec/volumeClaimTemplates
+    kind: StatefulSet
+  project: default
+  source:
+    helm:
+      valueFiles:
+      - values-aks.yaml
+    path: sa-platform
+    repoURL: https://github.com/AndresCalvo98/software-avanzado-gitops.git
+    targetRevision: af1a53234b78861fb937810798a67d32508b0e1c
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true

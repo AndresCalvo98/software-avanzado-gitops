@@ -1,0 +1,89 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: sa-platform-app:apps/StatefulSet:produccion/sa-platform-rabbitmq
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{"argocd.argoproj.io/tracking-id":"sa-platform-app:apps/StatefulSet:produccion/sa-platform-rabbitmq"},"labels":{"app":"rabbitmq"},"name":"sa-platform-rabbitmq","namespace":"produccion"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"rabbitmq"}},"serviceName":"sa-platform-rabbitmq-headless","template":{"metadata":{"labels":{"app":"rabbitmq"}},"spec":{"containers":[{"env":[{"name":"RABBITMQ_DEFAULT_USER","value":"AndresCalvo"},{"name":"RABBITMQ_DEFAULT_PASS","value":"123456"}],"image":"rabbitmq:3.13-management","imagePullPolicy":"IfNotPresent","livenessProbe":{"exec":{"command":["rabbitmq-diagnostics","status"]},"initialDelaySeconds":60,"periodSeconds":30,"timeoutSeconds":15},"name":"rabbitmq","ports":[{"containerPort":5672,"name":"amqp"},{"containerPort":15672,"name":"management"}],"readinessProbe":{"exec":{"command":["rabbitmq-diagnostics","ping"]},"initialDelaySeconds":30,"periodSeconds":10,"timeoutSeconds":10}}]}}}}
+  creationTimestamp: "2026-09-19T06:22:44Z"
+  generation: 1
+  labels:
+    app: rabbitmq
+  name: sa-platform-rabbitmq
+  namespace: produccion
+  resourceVersion: "112934"
+  uid: 2beb9a15-822f-46d0-a210-22de77e196cd
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: rabbitmq
+  serviceName: sa-platform-rabbitmq-headless
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+      - env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: AndresCalvo
+        - name: RABBITMQ_DEFAULT_PASS
+          value: "123456"
+        image: rabbitmq:3.13-management
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          exec:
+            command:
+            - rabbitmq-diagnostics
+            - status
+          failureThreshold: 3
+          initialDelaySeconds: 60
+          periodSeconds: 30
+          successThreshold: 1
+          timeoutSeconds: 15
+        name: rabbitmq
+        ports:
+        - containerPort: 5672
+          name: amqp
+          protocol: TCP
+        - containerPort: 15672
+          name: management
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - rabbitmq-diagnostics
+            - ping
+          failureThreshold: 3
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 10
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: sa-platform-rabbitmq-744965559b
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: sa-platform-rabbitmq-744965559b
+  updatedReplicas: 1

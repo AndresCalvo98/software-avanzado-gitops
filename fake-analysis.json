@@ -1,0 +1,11 @@
+{
+  "apiVersion": "argoproj.io/v1alpha1",
+  "kind": "AnalysisRun",
+  "metadata": {
+    "name": "fake-fail",
+    "namespace": "produccion"
+  },
+  "spec": {
+    "metrics": []
+  }
+}

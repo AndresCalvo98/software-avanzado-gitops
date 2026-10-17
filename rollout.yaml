@@ -1,0 +1,124 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  annotations:
+    argocd.argoproj.io/tracking-id: sa-platform-app:argoproj.io/Rollout:produccion/sa-platform-app-api-gateway
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"argoproj.io/v1alpha1","kind":"Rollout","metadata":{"annotations":{"argocd.argoproj.io/tracking-id":"sa-platform-app:argoproj.io/Rollout:produccion/sa-platform-app-api-gateway"},"labels":{"app.kubernetes.io/instance":"sa-platform-app","app.kubernetes.io/managed-by":"Helm","app.kubernetes.io/name":"api-gateway","app.kubernetes.io/version":"1.0.0","helm.sh/chart":"api-gateway-1.0.0"},"name":"sa-platform-app-api-gateway","namespace":"produccion"},"spec":{"selector":{"matchLabels":{"app.kubernetes.io/instance":"sa-platform-app","app.kubernetes.io/name":"api-gateway"}},"strategy":{"canary":{"steps":[{"setWeight":20},{"pause":{"duration":"10s"}},{"setWeight":40},{"pause":{"duration":"10s"}},{"setWeight":80},{"analysis":{"templates":[{"templateName":"sa-platform-app-api-gateway-load-test"}]}}]}},"template":{"metadata":{"labels":{"app.kubernetes.io/instance":"sa-platform-app","app.kubernetes.io/name":"api-gateway"}},"spec":{"containers":[{"envFrom":[{"configMapRef":{"name":"sa-platform-app-api-gateway-config"}},{"secretRef":{"name":"sa-platform-secrets"}}],"image":"ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092","imagePullPolicy":"Always","name":"api-gateway","ports":[{"containerPort":80,"name":"http","protocol":"TCP"}],"resources":{"limits":{"cpu":"500m","memory":"512Mi"},"requests":{"cpu":"10m","memory":"64Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"readOnlyRootFilesystem":true},"volumeMounts":[{"mountPath":"/tmp","name":"tmp-vol"},{"mountPath":"/var/cache/nginx","name":"cache-vol"},{"mountPath":"/var/run","name":"run-vol"}]}],"serviceAccountName":"sa-platform-app-api-gateway","volumes":[{"emptyDir":{},"name":"tmp-vol"},{"emptyDir":{},"name":"cache-vol"},{"emptyDir":{},"name":"run-vol"}]}}}}
+    rollout.argoproj.io/revision: "1"
+  creationTimestamp: "2026-09-19T08:41:37Z"
+  generation: 3
+  labels:
+    app.kubernetes.io/instance: sa-platform-app
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: api-gateway
+    app.kubernetes.io/version: 1.0.0
+    helm.sh/chart: api-gateway-1.0.0
+  name: sa-platform-app-api-gateway
+  namespace: produccion
+  resourceVersion: "173547"
+  uid: e1d0151b-507c-4d39-8124-10eb380941ad
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: sa-platform-app
+      app.kubernetes.io/name: api-gateway
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause:
+          duration: 10s
+      - setWeight: 40
+      - pause:
+          duration: 10s
+      - setWeight: 80
+      - analysis:
+          templates:
+          - templateName: sa-platform-app-api-gateway-load-test
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: sa-platform-app
+        app.kubernetes.io/name: api-gateway
+    spec:
+      containers:
+      - envFrom:
+        - configMapRef:
+            name: sa-platform-app-api-gateway-config
+        - secretRef:
+            name: sa-platform-secrets
+        image: ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092
+        imagePullPolicy: Always
+        name: api-gateway
+        ports:
+        - containerPort: 80
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 10m
+            memory: 64Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+        volumeMounts:
+        - mountPath: /tmp
+          name: tmp-vol
+        - mountPath: /var/cache/nginx
+          name: cache-vol
+        - mountPath: /var/run
+          name: run-vol
+      serviceAccountName: sa-platform-app-api-gateway
+      volumes:
+      - emptyDir: {}
+        name: tmp-vol
+      - emptyDir: {}
+        name: cache-vol
+      - emptyDir: {}
+        name: run-vol
+status:
+  HPAReplicas: 2
+  availableReplicas: 2
+  blueGreen: {}
+  canary: {}
+  conditions:
+  - lastTransitionTime: "2026-09-19T08:41:38Z"
+    lastUpdateTime: "2026-09-19T08:41:38Z"
+    message: RolloutCompleted
+    reason: RolloutCompleted
+    status: "True"
+    type: Completed
+  - lastTransitionTime: "2026-09-19T08:42:26Z"
+    lastUpdateTime: "2026-09-19T08:42:26Z"
+    message: Rollout is healthy
+    reason: RolloutHealthy
+    status: "True"
+    type: Healthy
+  - lastTransitionTime: "2026-09-19T08:41:37Z"
+    lastUpdateTime: "2026-09-19T08:42:26Z"
+    message: ReplicaSet "sa-platform-app-api-gateway-57667fcdc4" has successfully
+      progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2026-09-19T08:42:26Z"
+    lastUpdateTime: "2026-09-19T08:42:26Z"
+    message: Rollout has minimum availability
+    reason: AvailableReason
+    status: "True"
+    type: Available
+  currentPodHash: 57667fcdc4
+  currentStepHash: 7d584bfddf
+  currentStepIndex: 6
+  observedGeneration: "3"
+  phase: Healthy
+  readyReplicas: 2
+  replicas: 2
+  selector: app.kubernetes.io/instance=sa-platform-app,app.kubernetes.io/name=api-gateway
+  stableRS: 57667fcdc4
+  updatedReplicas: 2

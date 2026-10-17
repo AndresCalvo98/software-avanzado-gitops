@@ -13,27 +13,41 @@ spec:
         # SLO 1: Disponibilidad >= 99% (Ventana móvil 5m)
         - record: sli:disponibilidad:ratio_rate5m
           expr: (sum(rate(http_requests_total{status!~"5.."}[5m])) or vector(0.999)) / (sum(rate(http_requests_total[5m])) or vector(1.0))
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_1h.md"
 
         # SLO 2: Latencia p95 <= 500ms (Ventana móvil 5m)
         - record: sli:latencia:p95_rate5m
           expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) or vector(0.120)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_latencia_p95.md"
 
         # Recording rules para consumo de presupuesto de error (Error Budget Burn Rates)
         - record: sli:error_budget_burn_rate:1h
           expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_1h.md"
 
         - record: sli:error_budget_burn_rate:5m
           expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_1h.md"
 
         - record: sli:error_budget_burn_rate:6h
           expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_6h.md"
 
         - record: sli:error_budget_burn_rate:30m
           expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_6h.md"
 
         # Métrica de negocio: transacciones_procesadas_total
         - record: transacciones_procesadas_total
           expr: sum(rate(transacciones_procesadas_total[5m])) or vector(150)
+          annotations:
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_1h.md"
 
     - name: sa-platform-alert-rules
       rules:

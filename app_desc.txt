@@ -1,0 +1,1004 @@
+Name:         sa-platform-app
+Namespace:    argocd
+Labels:       <none>
+Annotations:  <none>
+API Version:  argoproj.io/v1alpha1
+Kind:         Application
+Metadata:
+  Creation Timestamp:  2026-09-19T08:36:45Z
+  Generation:          171
+  Resource Version:    307553
+  UID:                 82a7ae75-9c0f-44ec-94bb-3ec308ea43d9
+Spec:
+  Destination:
+    Namespace:  produccion
+    Server:     https://kubernetes.default.svc
+  Ignore Differences:
+    Group:  apps
+    Json Pointers:
+      /spec/volumeClaimTemplates
+    Kind:   StatefulSet
+  Project:  default
+  Source:
+    Helm:
+      Value Files:
+        values-aks.yaml
+    Path:             sa-platform
+    Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+    Target Revision:  af1a53234b78861fb937810798a67d32508b0e1c
+  Sync Policy:
+    Automated:
+      Prune:      true
+      Self Heal:  true
+    Sync Options:
+      RespectIgnoreDifferences=true
+Status:
+  Controller Namespace:  argocd
+  Health:
+    Last Transition Time:  2026-09-19T09:00:28Z
+    Status:                Degraded
+  History:
+    Deploy Started At:  2026-09-19T08:12:08Z
+    Deployed At:        2026-09-19T08:12:12Z
+    Id:                 3
+    Initiated By:
+      Username:  admin
+    Revision:    e1e39b8246e69a0dd0dbfb38e153bfd5464e01c7
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:17:46Z
+    Deployed At:        2026-09-19T08:17:49Z
+    Id:                 4
+    Initiated By:
+      Automated:  true
+    Revision:     d89c424ebefcdca8468ec23f1f2490240f45fa07
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:18:01Z
+    Deployed At:        2026-09-19T08:18:03Z
+    Id:                 5
+    Initiated By:
+      Username:  admin
+    Revision:    d89c424ebefcdca8468ec23f1f2490240f45fa07
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:23:51Z
+    Deployed At:        2026-09-19T08:23:56Z
+    Id:                 6
+    Initiated By:
+      Automated:  true
+    Revision:     fe9a9d77c9f2b190913611ebb095faf005958645
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:24:05Z
+    Deployed At:        2026-09-19T08:24:08Z
+    Id:                 7
+    Initiated By:
+      Username:  admin
+    Revision:    fe9a9d77c9f2b190913611ebb095faf005958645
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:41:34Z
+    Deployed At:        2026-09-19T08:41:39Z
+    Id:                 8
+    Initiated By:
+      Automated:  true
+    Revision:     af1a53234b78861fb937810798a67d32508b0e1c
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:41:49Z
+    Deployed At:        2026-09-19T08:41:53Z
+    Id:                 9
+    Initiated By:
+      Username:  admin
+    Revision:    af1a53234b78861fb937810798a67d32508b0e1c
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T08:43:47Z
+    Deployed At:        2026-09-19T08:43:50Z
+    Id:                 10
+    Initiated By:
+      Username:  admin
+    Revision:    af1a53234b78861fb937810798a67d32508b0e1c
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T13:27:47Z
+    Deployed At:        2026-09-19T13:27:51Z
+    Id:                 11
+    Initiated By:
+      Username:  admin
+    Revision:    af1a53234b78861fb937810798a67d32508b0e1c
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  HEAD
+    Deploy Started At:  2026-09-19T13:30:07Z
+    Deployed At:        2026-09-19T13:30:10Z
+    Id:                 12
+    Initiated By:
+      Username:  admin
+    Revision:    af1a53234b78861fb937810798a67d32508b0e1c
+    Source:
+      Helm:
+        Value Files:
+          values-aks.yaml
+      Path:             sa-platform
+      Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+      Target Revision:  af1a53234b78861fb937810798a67d32508b0e1c
+  Operation State:
+    Finished At:  2026-09-19T13:30:10Z
+    Message:      successfully synced (all tasks run)
+    Operation:
+      Initiated By:
+        Username:  admin
+      Retry:
+      Sync:
+        Prune:     true
+        Revision:  af1a53234b78861fb937810798a67d32508b0e1c
+    Phase:         Succeeded
+    Started At:    2026-09-19T13:30:07Z
+    Sync Result:
+      Resources:
+        Group:       networking.k8s.io
+        Hook Phase:  Running
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/allow-microservices-to-rabbitmq unchanged
+        Name:        allow-microservices-to-rabbitmq
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       networking.k8s.io
+        Hook Phase:  Running
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/allow-microservices-to-postgresql unchanged
+        Name:        allow-microservices-to-postgresql
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       networking.k8s.io
+        Hook Phase:  Running
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/allow-ingress-to-gateway unchanged
+        Name:        allow-ingress-to-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       networking.k8s.io
+        Hook Phase:  Running
+        Kind:        NetworkPolicy
+        Message:     networkpolicy.networking.k8s.io/allow-gateway-to-microservices unchanged
+        Name:        allow-gateway-to-microservices
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ResourceQuota
+        Message:     resourcequota/sa-platform-quota unchanged
+        Name:        sa-platform-quota
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        LimitRange
+        Message:     limitrange/sa-platform-limits unchanged
+        Name:        sa-platform-limits
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Running
+        Kind:        PodDisruptionBudget
+        Message:     poddisruptionbudget.policy/sa-platform-auth-service configured
+        Name:        sa-platform-auth-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Running
+        Kind:        PodDisruptionBudget
+        Message:     poddisruptionbudget.policy/sa-platform-transaction-service configured
+        Name:        sa-platform-transaction-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Running
+        Kind:        PodDisruptionBudget
+        Message:     poddisruptionbudget.policy/sa-platform-approval-service configured
+        Name:        sa-platform-approval-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Running
+        Kind:        PodDisruptionBudget
+        Message:     poddisruptionbudget.policy/sa-platform-app-api-gateway configured
+        Name:        sa-platform-app-api-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       policy
+        Hook Phase:  Running
+        Kind:        PodDisruptionBudget
+        Message:     poddisruptionbudget.policy/sa-platform-notification-service configured
+        Name:        sa-platform-notification-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-cronjobs unchanged
+        Name:        sa-platform-cronjobs
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-notification-service unchanged
+        Name:        sa-platform-notification-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-app-api-gateway unchanged
+        Name:        sa-platform-app-api-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-transaction-service unchanged
+        Name:        sa-platform-transaction-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-approval-service unchanged
+        Name:        sa-platform-approval-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ServiceAccount
+        Message:     serviceaccount/sa-platform-auth-service unchanged
+        Name:        sa-platform-auth-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Secret
+        Message:     secret/sa-platform-secrets unchanged
+        Name:        sa-platform-secrets
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/sa-platform-app-api-gateway-config configured
+        Name:        sa-platform-app-api-gateway-config
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/sa-platform-auth-service-config unchanged
+        Name:        sa-platform-auth-service-config
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/sa-platform-approval-service-config configured
+        Name:        sa-platform-approval-service-config
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/sa-platform-notification-service-config configured
+        Name:        sa-platform-notification-service-config
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        ConfigMap
+        Message:     configmap/sa-platform-transaction-service-config configured
+        Name:        sa-platform-transaction-service-config
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       rbac.authorization.k8s.io
+        Hook Phase:  Running
+        Kind:        Role
+        Message:     role.rbac.authorization.k8s.io/cronjob-role reconciledrole.rbac.authorization.k8s.io/cronjob-role unchanged
+        Name:        cronjob-role
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       rbac.authorization.k8s.io
+        Hook Phase:  Running
+        Kind:        RoleBinding
+        Message:     rolebinding.rbac.authorization.k8s.io/cronjob-rolebinding reconciledrolebinding.rbac.authorization.k8s.io/cronjob-rolebinding unchanged
+        Name:        cronjob-rolebinding
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-notification-service unchanged
+        Name:        sa-platform-notification-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-app-api-gateway unchanged
+        Name:        sa-platform-app-api-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-approval-service unchanged
+        Name:        sa-platform-approval-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-auth-service unchanged
+        Name:        sa-platform-auth-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-rabbitmq unchanged
+        Name:        sa-platform-rabbitmq
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-rabbitmq-headless unchanged
+        Name:        sa-platform-rabbitmq-headless
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       
+        Hook Phase:  Running
+        Kind:        Service
+        Message:     service/sa-platform-transaction-service unchanged
+        Name:        sa-platform-transaction-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       autoscaling
+        Hook Phase:  Running
+        Kind:        HorizontalPodAutoscaler
+        Message:     horizontalpodautoscaler.autoscaling/sa-platform-notification-service unchanged
+        Name:        sa-platform-notification-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       autoscaling
+        Hook Phase:  Running
+        Kind:        HorizontalPodAutoscaler
+        Message:     horizontalpodautoscaler.autoscaling/sa-platform-app-api-gateway unchanged
+        Name:        sa-platform-app-api-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       autoscaling
+        Hook Phase:  Running
+        Kind:        HorizontalPodAutoscaler
+        Message:     horizontalpodautoscaler.autoscaling/sa-platform-approval-service unchanged
+        Name:        sa-platform-approval-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       autoscaling
+        Hook Phase:  Running
+        Kind:        HorizontalPodAutoscaler
+        Message:     horizontalpodautoscaler.autoscaling/sa-platform-auth-service unchanged
+        Name:        sa-platform-auth-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       autoscaling
+        Hook Phase:  Running
+        Kind:        HorizontalPodAutoscaler
+        Message:     horizontalpodautoscaler.autoscaling/sa-platform-transaction-service unchanged
+        Name:        sa-platform-transaction-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v2
+        Group:       apps
+        Hook Phase:  Running
+        Images:
+          rabbitmq:3.13-management
+        Kind:        StatefulSet
+        Message:     statefulset.apps/sa-platform-rabbitmq unchanged
+        Name:        sa-platform-rabbitmq
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       batch
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-cronjob-summary-broker:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        CronJob
+        Message:     cronjob.batch/cronjob-summary-broker unchanged
+        Name:        cronjob-summary-broker
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       batch
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-cronjob-insert-db:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        CronJob
+        Message:     cronjob.batch/cronjob-insert-db unchanged
+        Name:        cronjob-insert-db
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       networking.k8s.io
+        Hook Phase:  Running
+        Kind:        Ingress
+        Message:     ingress.networking.k8s.io/sa-platform-ingress unchanged
+        Name:        sa-platform-ingress
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        Rollout
+        Message:     rollout.argoproj.io/sa-platform-app-api-gateway unchanged
+        Name:        sa-platform-app-api-gateway
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Kind:        AnalysisTemplate
+        Message:     analysistemplate.argoproj.io/sa-platform-app-api-gateway-load-test unchanged
+        Name:        sa-platform-app-api-gateway-load-test
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        Rollout
+        Message:     rollout.argoproj.io/sa-platform-approval-service unchanged
+        Name:        sa-platform-approval-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Kind:        AnalysisTemplate
+        Message:     analysistemplate.argoproj.io/sa-platform-approval-service-load-test unchanged
+        Name:        sa-platform-approval-service-load-test
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        Rollout
+        Message:     rollout.argoproj.io/sa-platform-auth-service unchanged
+        Name:        sa-platform-auth-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Kind:        AnalysisTemplate
+        Message:     analysistemplate.argoproj.io/sa-platform-auth-service-load-test unchanged
+        Name:        sa-platform-auth-service-load-test
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        Rollout
+        Message:     rollout.argoproj.io/sa-platform-notification-service unchanged
+        Name:        sa-platform-notification-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Kind:        AnalysisTemplate
+        Message:     analysistemplate.argoproj.io/sa-platform-notification-service-load-test unchanged
+        Name:        sa-platform-notification-service-load-test
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       bitnami.com
+        Hook Phase:  Running
+        Kind:        SealedSecret
+        Message:     sealedsecret.bitnami.com/sa-platform-secrets unchanged
+        Name:        sa-platform-secrets
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Images:
+          ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+        Kind:        Rollout
+        Message:     rollout.argoproj.io/sa-platform-transaction-service unchanged
+        Name:        sa-platform-transaction-service
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+        Group:       argoproj.io
+        Hook Phase:  Running
+        Kind:        AnalysisTemplate
+        Message:     analysistemplate.argoproj.io/sa-platform-transaction-service-load-test unchanged
+        Name:        sa-platform-transaction-service-load-test
+        Namespace:   produccion
+        Status:      Synced
+        Sync Phase:  Sync
+        Version:     v1alpha1
+      Revision:      af1a53234b78861fb937810798a67d32508b0e1c
+      Source:
+        Helm:
+          Value Files:
+            values-aks.yaml
+        Path:              sa-platform
+        Repo URL:          https://github.com/AndresCalvo98/software-avanzado-gitops.git
+        Target Revision:   af1a53234b78861fb937810798a67d32508b0e1c
+  Reconciled At:           2026-09-19T13:30:10Z
+  Resource Health Source:  appTree
+  Resources:
+    Kind:       ConfigMap
+    Name:       sa-platform-app-api-gateway-config
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ConfigMap
+    Name:       sa-platform-approval-service-config
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ConfigMap
+    Name:       sa-platform-auth-service-config
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ConfigMap
+    Name:       sa-platform-notification-service-config
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ConfigMap
+    Name:       sa-platform-transaction-service-config
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       LimitRange
+    Name:       sa-platform-limits
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ResourceQuota
+    Name:       sa-platform-quota
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Secret
+    Name:       sa-platform-secrets
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-app-api-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-approval-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-auth-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-notification-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-rabbitmq
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-rabbitmq-headless
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       Service
+    Name:       sa-platform-transaction-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-app-api-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-approval-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-auth-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-cronjobs
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-notification-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Kind:       ServiceAccount
+    Name:       sa-platform-transaction-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      apps
+    Kind:       StatefulSet
+    Name:       sa-platform-rabbitmq
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       sa-platform-app-api-gateway-load-test
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       sa-platform-approval-service-load-test
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       sa-platform-auth-service-load-test
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       sa-platform-notification-service-load-test
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       AnalysisTemplate
+    Name:       sa-platform-transaction-service-load-test
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       sa-platform-app-api-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       sa-platform-approval-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       sa-platform-auth-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       sa-platform-notification-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      argoproj.io
+    Kind:       Rollout
+    Name:       sa-platform-transaction-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      autoscaling
+    Kind:       HorizontalPodAutoscaler
+    Name:       sa-platform-app-api-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v2
+    Group:      autoscaling
+    Kind:       HorizontalPodAutoscaler
+    Name:       sa-platform-approval-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v2
+    Group:      autoscaling
+    Kind:       HorizontalPodAutoscaler
+    Name:       sa-platform-auth-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v2
+    Group:      autoscaling
+    Kind:       HorizontalPodAutoscaler
+    Name:       sa-platform-notification-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v2
+    Group:      autoscaling
+    Kind:       HorizontalPodAutoscaler
+    Name:       sa-platform-transaction-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v2
+    Group:      batch
+    Kind:       CronJob
+    Name:       cronjob-insert-db
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      batch
+    Kind:       CronJob
+    Name:       cronjob-summary-broker
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      bitnami.com
+    Kind:       SealedSecret
+    Name:       sa-platform-secrets
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1alpha1
+    Group:      networking.k8s.io
+    Kind:       Ingress
+    Name:       sa-platform-ingress
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      networking.k8s.io
+    Kind:       NetworkPolicy
+    Name:       allow-gateway-to-microservices
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      networking.k8s.io
+    Kind:       NetworkPolicy
+    Name:       allow-ingress-to-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      networking.k8s.io
+    Kind:       NetworkPolicy
+    Name:       allow-microservices-to-postgresql
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      networking.k8s.io
+    Kind:       NetworkPolicy
+    Name:       allow-microservices-to-rabbitmq
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      policy
+    Kind:       PodDisruptionBudget
+    Name:       sa-platform-app-api-gateway
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      policy
+    Kind:       PodDisruptionBudget
+    Name:       sa-platform-approval-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      policy
+    Kind:       PodDisruptionBudget
+    Name:       sa-platform-auth-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      policy
+    Kind:       PodDisruptionBudget
+    Name:       sa-platform-notification-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      policy
+    Kind:       PodDisruptionBudget
+    Name:       sa-platform-transaction-service
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      rbac.authorization.k8s.io
+    Kind:       Role
+    Name:       cronjob-role
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+    Group:      rbac.authorization.k8s.io
+    Kind:       RoleBinding
+    Name:       cronjob-rolebinding
+    Namespace:  produccion
+    Status:     Synced
+    Version:    v1
+  Source Hydrator:
+  Source Type:  Helm
+  Summary:
+    Images:
+      ghcr.io/andrescalvo98/sa-api-gateway:a77ad6744bad4fceee6971b7963b9c2696f29092
+      ghcr.io/andrescalvo98/sa-approval-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+      ghcr.io/andrescalvo98/sa-auth-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+      ghcr.io/andrescalvo98/sa-notification-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+      ghcr.io/andrescalvo98/sa-transaction-service:a77ad6744bad4fceee6971b7963b9c2696f29092
+      rabbitmq:3.13-management
+  Sync:
+    Compared To:
+      Destination:
+        Namespace:  produccion
+        Server:     https://kubernetes.default.svc
+      Ignore Differences:
+        Group:  apps
+        Json Pointers:
+          /spec/volumeClaimTemplates
+        Kind:  StatefulSet
+      Source:
+        Helm:
+          Value Files:
+            values-aks.yaml
+        Path:             sa-platform
+        Repo URL:         https://github.com/AndresCalvo98/software-avanzado-gitops.git
+        Target Revision:  af1a53234b78861fb937810798a67d32508b0e1c
+    Revision:             af1a53234b78861fb937810798a67d32508b0e1c
+    Status:               Synced
+Events:
+  Type    Reason              Age    From                           Message
+  ----    ------              ----   ----                           -------
+  Normal  OperationCompleted  3m43s  argocd-application-controller  Sync operation to af1a53234b78861fb937810798a67d32508b0e1c succeeded
+  Normal  OperationCompleted  84s    argocd-application-controller  Sync operation to af1a53234b78861fb937810798a67d32508b0e1c succeeded
