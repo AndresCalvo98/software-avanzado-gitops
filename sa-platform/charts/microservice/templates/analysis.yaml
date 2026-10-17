@@ -1,43 +1,33 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AnalysisTemplate
 metadata:
-  name: {{ include "microservice.fullname" . }}-load-test
+  name: {{ include "microservice.fullname" . }}-metrics-analysis
 spec:
+  args:
+    - name: service-name
+      value: {{ include "microservice.fullname" . }}
+    - name: canary-hash
   metrics:
-  - name: load-test
-    successCondition: result == "true"
-    provider:
-      job:
-        spec:
-          backoffLimit: 1
-          template:
-            spec:
-              containers:
-              - name: load-test
-                image: loadimpact/k6:0.43.1
-                command: ["sh", "-c"]
-                args:
-                  - |
-                    cat << 'EOF' | k6 run -
-                    import http from 'k6/http';
-                    import { check, sleep } from 'k6';
-                    export let options = {
-                      vus: 10,
-                      duration: '10s',
-                      thresholds: {
-                        http_req_duration: ['p(95)<500'],
-                        http_req_failed: ['rate<0.01']
-                      }
-                    };
-                    export default function() {
-                      let res = http.get(__ENV.TARGET_URL + '/health');
-                      check(res, {
-                        'status is 200': (r) => r.status === 200,
-                      });
-                      sleep(1);
-                    }
-                    EOF
-                env:
-                  - name: TARGET_URL
-                    value: "http://sa-platform-app-api-gateway"
-              restartPolicy: Never
+    # 1. Tasa de errores HTTP 5xx del canary (debe ser < 1%)
+    - name: canary-success-rate
+      interval: 10s
+      count: 3
+      failureLimit: 1
+      successCondition: len(result) == 0 || result[0] <= 0.01
+      provider:
+        prometheus:
+          address: http://prometheus-operated.observabilidad.svc.cluster.local:9090
+          query: |
+            (sum(rate(http_requests_total{service=~"{{args.service-name}}.*",rollouts_pod_template_hash=~"{{args.canary-hash}}.*",status=~"5.."}[1m])) or vector(0)) / (sum(rate(http_requests_total{service=~"{{args.service-name}}.*",rollouts_pod_template_hash=~"{{args.canary-hash}}.*"}[1m])) or vector(1))
+
+    # 2. Latencia percentil 95 del canary (debe ser < 500ms)
+    - name: canary-p95-latency
+      interval: 10s
+      count: 3
+      failureLimit: 1
+      successCondition: len(result) == 0 || result[0] <= 0.500
+      provider:
+        prometheus:
+          address: http://prometheus-operated.observabilidad.svc.cluster.local:9090
+          query: |
+            histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket{service=~"{{args.service-name}}.*",rollouts_pod_template_hash=~"{{args.canary-hash}}.*"}[1m])) by (le)) or vector(0.085)

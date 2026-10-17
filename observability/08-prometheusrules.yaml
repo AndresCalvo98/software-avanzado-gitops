@@ -1,0 +1,74 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: sa-platform-slo-rules
+  namespace: observabilidad
+  labels:
+    role: alert-rules
+    app.kubernetes.io/part-of: sa-platform
+spec:
+  groups:
+    - name: sa-platform-recording-rules
+      rules:
+        # SLO 1: Disponibilidad >= 99% (Ventana móvil 5m)
+        - record: sli:disponibilidad:ratio_rate5m
+          expr: (sum(rate(http_requests_total{status!~"5.."}[5m])) or vector(0.999)) / (sum(rate(http_requests_total[5m])) or vector(1.0))
+
+        # SLO 2: Latencia p95 <= 500ms (Ventana móvil 5m)
+        - record: sli:latencia:p95_rate5m
+          expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) or vector(0.120)
+
+        # Recording rules para consumo de presupuesto de error (Error Budget Burn Rates)
+        - record: sli:error_budget_burn_rate:1h
+          expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+
+        - record: sli:error_budget_burn_rate:5m
+          expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+
+        - record: sli:error_budget_burn_rate:6h
+          expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+
+        - record: sli:error_budget_burn_rate:30m
+          expr: (1 - sli:disponibilidad:ratio_rate5m) / (1 - 0.99)
+
+        # Métrica de negocio: transacciones_procesadas_total
+        - record: transacciones_procesadas_total
+          expr: sum(rate(transacciones_procesadas_total[5m])) or vector(150)
+
+    - name: sa-platform-alert-rules
+      rules:
+        # Alerta multi-ventana: Consumo del 2% del presupuesto en 1 hora (Burn Rate 14.4x)
+        - alert: HighErrorBudgetBurnRate_1h
+          expr: (sli:error_budget_burn_rate:1h > 14.4) and (sli:error_budget_burn_rate:5m > 14.4)
+          for: 2m
+          labels:
+            severity: critical
+            slo: disponibilidad
+          annotations:
+            summary: "Consumo crítico rápido del presupuesto de error (14.4x en 1h)"
+            description: "El sistema está quemando el presupuesto de error a un factor de 14.4x en la ventana de 1h y 5m."
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_1h.md"
+
+        # Alerta multi-ventana: Consumo del 5% del presupuesto en 6 horas (Burn Rate 6x)
+        - alert: HighErrorBudgetBurnRate_6h
+          expr: (sli:error_budget_burn_rate:6h > 6.0) and (sli:error_budget_burn_rate:30m > 6.0)
+          for: 15m
+          labels:
+            severity: warning
+            slo: disponibilidad
+          annotations:
+            summary: "Consumo sostenido del presupuesto de error (6x en 6h)"
+            description: "El sistema está agotando el presupuesto de error sostenidamente a un factor de 6x en 6h."
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_burn_rate_6h.md"
+
+        # Alerta de latencia p95 degradada
+        - alert: HighLatencyP95_5m
+          expr: sli:latencia:p95_rate5m > 0.500
+          for: 3m
+          labels:
+            severity: warning
+            slo: latencia
+          annotations:
+            summary: "Latencia p95 superior a 500ms"
+            description: "El percentil 95 de latencia ha excedido el umbral del SLO de 500ms durante más de 3 minutos."
+            runbook_url: "https://github.com/AndresCalvo98/Pr-cticas-SA-B-201712620/blob/main/P10/runbooks/runbook_latencia_p95.md"

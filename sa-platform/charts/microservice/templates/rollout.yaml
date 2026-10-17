@@ -21,7 +21,13 @@ spec:
       - setWeight: 80
       - analysis:
           templates:
-          - templateName: {{ include "microservice.fullname" . }}-load-test
+          - templateName: {{ include "microservice.fullname" . }}-metrics-analysis
+          args:
+          - name: service-name
+            value: {{ include "microservice.fullname" . }}
+          - name: canary-hash
+            valueFrom:
+              podTemplateHashValue: Latest
   template:
     metadata:
       labels:
